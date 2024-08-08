@@ -69,13 +69,18 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Test
 To run the test_fast project, the steps are as follows.
 1.- Download the github repository https://github.com/Heriberto-Bazan/test_smart_fast.git
+
 2.- Create the database for the Project in .env
+
 3.- Run the command composer install o composer update
+
 4.- Run the command php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
 5.- Run the Generate secret key php artisan jwt:secret command
+
 6.- Run the php artisan migrate 
 
-Los siguientes end_point
+End Point
 The following end_points
 1.- Register a user (POST) http://127.0.0.1:8000/api/v1/register
 2.- To delete the token (POST) http://127.0.0.1:8000/api/v1/logout
