@@ -81,16 +81,27 @@ To run the test_fast project, the steps are as follows.
 6.- Run the php artisan migrate 
 
 End Point
+
 The following end_points
+
 1.- Register a user (POST) http://127.0.0.1:8000/api/v1/register
+
 2.- To delete the token (POST) http://127.0.0.1:8000/api/v1/logout
+
 3.- To generate the login (POST) http://127.0.0.1:8000/api/v1/login
+
 4.- Show all users (GET) http://127.0.0.1:8000/api/v1/users
+
 5.- To register a transaction (POST) http://127.0.0.1:8000/api/v1/transaction-register
+
 6.- To show all transactions (GET) http://127.0.0.1:8000/api/v1/transaction-all
+
 7.- To show a transaction by code (GET) http://127.0.0.1:8000/api/v1/transaction-code/000000000000017
+
 8.- To display a transaction by id (GET) http://127.0.0.1:8000/api/v1/transaction-id/2
+
 9.- To execute a transaction for the provider (PUT) http://127.0.0.1:8000/api/v1/transaction-provider/1
+
 
 Routes are protected by JWT token end middleware
 
