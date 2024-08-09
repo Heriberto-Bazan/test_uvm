@@ -1,3 +1,43 @@
+## Run Project
+
+Test
+
+To run the test_fast project, the steps are as follows.
+
+1.- Download the github repository https://github.com/Heriberto-Bazan/test_smart_fast.git
+
+2.- Create the database for the Project in .env
+
+3.- Run the command composer install o composer update
+
+4.- Run the command php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+5.- Run the Generate secret key php artisan jwt:secret command
+
+6.- Run the php artisan migrate 
+
+End Point
+
+The following end_points
+
+1.- Register a user (POST) http://127.0.0.1:8000/api/v1/register
+
+2.- To delete the token (POST) http://127.0.0.1:8000/api/v1/logout
+
+3.- To generate the login (POST) http://127.0.0.1:8000/api/v1/login
+
+4.- Show all users (GET) http://127.0.0.1:8000/api/v1/users
+
+5.- To register a transaction (POST) http://127.0.0.1:8000/api/v1/transaction-register
+
+6.- To show all transactions (GET) http://127.0.0.1:8000/api/v1/transaction-all
+
+7.- To show a transaction by code (GET) http://127.0.0.1:8000/api/v1/transaction-code/000000000000017
+
+8.- To display a transaction by id (GET) http://127.0.0.1:8000/api/v1/transaction-id/2
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -64,43 +104,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 "# test_smart_fast" 
 
-## Run Project
 
-Test
-
-To run the test_fast project, the steps are as follows.
-
-1.- Download the github repository https://github.com/Heriberto-Bazan/test_smart_fast.git
-
-2.- Create the database for the Project in .env
-
-3.- Run the command composer install o composer update
-
-4.- Run the command php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
-
-5.- Run the Generate secret key php artisan jwt:secret command
-
-6.- Run the php artisan migrate 
-
-End Point
-
-The following end_points
-
-1.- Register a user (POST) http://127.0.0.1:8000/api/v1/register
-
-2.- To delete the token (POST) http://127.0.0.1:8000/api/v1/logout
-
-3.- To generate the login (POST) http://127.0.0.1:8000/api/v1/login
-
-4.- Show all users (GET) http://127.0.0.1:8000/api/v1/users
-
-5.- To register a transaction (POST) http://127.0.0.1:8000/api/v1/transaction-register
-
-6.- To show all transactions (GET) http://127.0.0.1:8000/api/v1/transaction-all
-
-7.- To show a transaction by code (GET) http://127.0.0.1:8000/api/v1/transaction-code/000000000000017
-
-8.- To display a transaction by id (GET) http://127.0.0.1:8000/api/v1/transaction-id/2
 
 9.- To execute a transaction for the provider (PUT) http://127.0.0.1:8000/api/v1/transaction-provider/1
 
