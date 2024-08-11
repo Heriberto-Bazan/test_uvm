@@ -118,3 +118,4 @@ Routes are protected by JWT token end middleware
 >>>>>>> 73c754cb13c61dfffe0845aeadb79c11a9ca8798
 "# smart_fast_test" 
 "# test_smart" 
+"# test_smart_fast" 
