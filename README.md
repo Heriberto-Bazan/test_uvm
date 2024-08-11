@@ -119,3 +119,4 @@ Routes are protected by JWT token end middleware
 "# smart_fast_test" 
 "# test_smart" 
 "# test_smart_fast" 
+"# test_smart_fast" 
