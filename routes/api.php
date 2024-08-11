@@ -32,7 +32,7 @@ Route::prefix('v1')->group(function () {
         Route::get('transaction-all', [TransactionController::class, 'index']);
         Route::get('transaction-code/{code}', [TransactionController::class, 'code']);
         Route::get('transaction-id/{id}', [TransactionController::class, 'show']);
-        Route::put('transaction-provider/{id}', [AuthController::class, 'update']); 
+        Route::put('transaction-provider/{id}', [AuthController::class, 'update']);  
     
     });
 });
