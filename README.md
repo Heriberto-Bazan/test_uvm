@@ -4,7 +4,7 @@ Test  API Back-End Test-UVM
 
 To run the test_fast project, the steps are as follows.
 
-1.- Download the github repository https://github.com/Heriberto-Bazan/test_smart_fast.git
+1.- Download the github repository https://github.com/Heriberto-Bazan/test_uvm
 
 2.- Create the database for the Project in .env
 
