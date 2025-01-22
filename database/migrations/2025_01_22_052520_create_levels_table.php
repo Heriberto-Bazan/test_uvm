@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIdentificationDocumentsTable extends Migration
+class CreateLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateIdentificationDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('identification_documents', function (Blueprint $table) {
+        Schema::create('levels', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->tinyInteger('active')->default(true);
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateIdentificationDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('identification_documents');
+        Schema::dropIfExists('levels');
     }
 }

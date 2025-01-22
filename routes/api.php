@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\V1\AuthController;
-use App\Http\Controllers\V1\TransactionController;
+use App\Http\Controllers\v1\GenderController;
+use App\Http\Controllers\v1\LevelController;
+use App\Http\Controllers\v1\StatusController;
+use App\Http\Controllers\v1\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,18 +24,19 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::prefix('v1')->group(function () {
-    Route::post('login', [AuthController::class, 'authenticate']);
+    Route::post('login', [AuthController::class, 'login']);
     Route::post('register', [AuthController::class, 'register']);
     Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('check', [AuthController::class, 'check']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+
+    Route::post('student-register', [StudentController::class, 'register']);
+    Route::get('status', [StatusController::class, 'allStatus']);
+    Route::get('gender', [GenderController::class, 'allGender']);
+    Route::get('level', [LevelController::class, 'allLevel']);
 
     Route::group(['middleware' => ['jwt.verify']], function () {
-        Route::get('users', [AuthController::class, 'index']);
+        Route::get('users', [AuthController::class, 'allUser']);
         Route::post('get-user', [AuthController::class, 'getUser']);
-        Route::post('transaction-register', [TransactionController::class, 'register']);
-        Route::get('transaction-all', [TransactionController::class, 'index']);
-        Route::get('transaction-code/{code}', [TransactionController::class, 'code']);
-        Route::get('transaction-id/{id}', [TransactionController::class, 'show']);
-        Route::put('transaction-provider/{id}', [AuthController::class, 'update']);  
-    
     });
 });

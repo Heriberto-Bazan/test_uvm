@@ -44,11 +44,9 @@ class AuthService
     public function savePostData($data)
     {
         $validator = Validator::make($data, [
-            'name' => 'required|string',
+            'name' => 'required|string|max:60',
             'email' => 'required|email|unique:users',
-            'balance' => 'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
             'password' => 'required|string|min:6|max:50',
-
         ]);
 
         if ($validator->fails()) {
@@ -56,7 +54,6 @@ class AuthService
         }
 
         DB::beginTransaction();
-
         try {
 
             $result = $this->userRepository->save($data);
@@ -68,8 +65,8 @@ class AuthService
 
             throw new InvalidArgumentException('Error saving information');
         }
-
         DB::commit();
+
         return $result;
     }
 
@@ -138,40 +135,4 @@ class AuthService
         return $this->postRepository->getById($id);
     }
 
-    /**
-     * Update post data
-     * Store to DB if there are no errors.
-     *
-     * @param array $data
-     * @return String
-     */
-    public function transactionProvider($data, $id)
-    {
-    
-        $validator = Validator::make($data, [
-            'gain' => 'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
-        ]);
-
-        if ($validator->fails()) {
-            throw new InvalidArgumentException($validator->errors()->first());
-        }
-
-        DB::beginTransaction();
-
-        try {
-            
-            $post = $this->userRepository->update($data, $id);
-
-        } catch (Exception $e) {
-            DB::rollBack();
-            Log::info($e->getMessage());
-
-            throw new InvalidArgumentException('Unable to update transaction data');
-        }
-
-        DB::commit();
-
-        return $post;
-
-    }
 }

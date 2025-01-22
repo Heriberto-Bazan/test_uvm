@@ -47,7 +47,6 @@ class AuthRepository
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->password = bcrypt($data['password']);
-        $user->balance = $data['balance'];
 
         $user->save();
         return $user->fresh();
@@ -81,7 +80,7 @@ class AuthRepository
     {
     
         $post = $this->user->find($id);
-        $total = $post['balance'] + $data['gain'];
+    
         $post->gain = $data['gain'];
         $post->total_amount = $total;
     
